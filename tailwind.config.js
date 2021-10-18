@@ -12,6 +12,7 @@ module.exports = {
       'customColor2':'#0f20a3',
       'customColor3':'rgb(90 173 249)',
       'customColor4':'rgb(12 83 199 / 50%)',
+      'customColor5':'#ececec',
 
 
      }),

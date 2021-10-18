@@ -8,6 +8,7 @@ import Register from './component/Register/Register';
 import SignIn from './component/SignIn/SignIn';
 import Footer from './component/Footer/Footer';
 import NotFound from './component/NotFound/NotFound';
+import Detail from './component/Detail/Detail';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
             </Route>
             <Route path="/sign">
               <SignIn></SignIn>
+            </Route>
+            <Route path="/detail/:detailId">
+              <Detail></Detail>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

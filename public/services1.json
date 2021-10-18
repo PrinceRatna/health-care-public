@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "price":750,
+      "title": "Cardiac Surgeries",
+      "url": "./pic1/cardiac.jpg",
+      "detail":"Cardiovascular surgery, also referred to as cardiac surgery or heart surgery, describes any surgical procedure that involves the heart, or the blood vessels that carry blood to and from the heart. These procedures are common with patients who have heart disease or have had a heart attack, stroke or blood clot—as well as individuals who are at high risk for developing these problems. While cardiovascular surgery isn’t always necessary to treat heart problems, doctors may recommend it for a variety of reasons, including treating or preventing heart attacks and blood clots, addressing irregular heartbeats, opening blocked or narrowed arteries, repairing congenital heart problems, and fixing damaged or diseased heart valves. Some cardiovascular conditions require open surgery, but many are treated with less invasive techniques that use catheters and robotics. Cardiovascular surgery patients are cared for by a health care team that includes a primary care doctor, cardiologist, cardiovascular surgeon, anesthesiologist and other specialists."},
+    {
+      "id": 2,
+      "price":400,
+      "title": " Kidney Transplant",
+      "url": "./pic1/kidney.jpg",
+      "detail":"A kidney transplant is a surgical procedure to place a healthy kidney from a living or deceased donor into a person whose kidneys no longer function properly.The kidneys are two bean-shaped organs located on each side of the spine just below the rib cage. Each is about the size of a fist. Their main function is to filter and remove waste, minerals and fluid from the blood by producing urine. When your kidneys lose this filtering ability, harmful levels of fluid and waste accumulate in your body, which can raise your blood pressure and result in kidney failure (end-stage kidney disease). End-stage renal disease occurs when the kidneys have lost about 90% of their ability to function normally."},
+    {
+      "id": 3,
+      "price":660,
+      "title": "Critical Brain & Spinal Surgeries",
+      "url": "./pic1/brain.jpg",
+       "detail":"Awake brain surgery, also called awake craniotomy, is a type of procedure performed on the brain while you are awake and alert. Awake brain surgery is used to treat some brain (neurological) conditions, including some brain tumors or epileptic seizures.If your tumor or the area of your brain where your seizures occur (epileptic focus) is near the parts of your brain that control vision, movement or speech, you may need to be awake during surgery. Your surgeon may ask you questions and monitor the activity in your brain as you respond.Your responses help your surgeon to ensure that he or she treats the correct area of your brain needing surgery. The procedure also lowers the risk of damage to functional areas of your brain that could affect your vision, movement or speech."},
+    {
+      "id": 4,
+      "price":450,
+      "title": "Endoscopy Facility",
+      "url": "./pic1/endoscopy.jpg",
+      "detail":"An upper endoscopy is a procedure used to visually examine your upper digestive system with a tiny camera on the end of a long, flexible tube. A specialist in diseases of the digestive system (gastroenterologist) uses an endoscopy to diagnose and, sometimes, treat conditions that affect the esophagus, stomach and beginning of the small intestine (duodenum).The medical term for an upper endoscopy is esophagogastroduodenoscopy. You may have an upper endoscopy done in your doctor's office, an outpatient surgery center or a hospital."},
+    {
+      "id": 5,
+      "price":300,
+      "title": "Mobile X-Rays",
+      "url": "./pic1/x-ray.png",
+      "detail":"For several years mobile X-ray equipment has been routinely used for imaging in patients too unwell within the hospital, when transportation to the radiology department was inadvisable. Now, mobile X-ray examinations are also used outside the hospital. The literature describes that fragile patients may benefit from mobile X-ray, but we need to provide insights into the breadth, depth and gaps in a body of literature." },
+    {
+      "id": 6,
+      "price":450,
+      "title": "EEG and EMG Machines",
+      "url": "./pic1/eeg.jpeg",
+      "detail":"Electroencephalography (EEG) is a technique used to track the electrical activity of the brain through the placement of electrodes on the scalp. Clinically, EEG are often used to identify seizures, but this same technology can also be used by researchers to reveal a various brain functions and how those functions relate to human cognition and behavior. Unlike the tES techniques described above, the scalp electrodes employed during EEG are only used to record the brain’s natural electrical activity; they do not deliver electrical energy to the brain. Consequently, there are no major risks associated with this entirely noninvasive brain monitoring technique."},
+    {
+      "id": 7,
+      "price":300,
+      "title": "Blood Bank",
+      "url": "./pic1/blood-bank.jpg",
+      "detail":"24 hour opened bank . Any type of blood is available here.It is situated at Mirpur ,Dhaka."
+    },
+    {
+      "id": 8,
+      "price":1150,
+      "title": " 24 hour ambulance Service",
+      "url": "./pic1/ambulance.png",
+      "detail":"24 hour ambulance service is available in our service.we have 55 ambulance."
+    },
+    {
+      "id": 9,
+      "price":990,
+      "title": "Modular Operation Theatres",
+      "url": "./pic1/modular.jpg",
+      "detail":"In an operating department for which the most integrated function is required, cleanliness must be kept and the safety of facilities, equipment and devices must be maintained any times. Furthermore, the working environment for medical staff such as doctors and nurses must be considered from the view point of human engineering. The modular operating theatre satisfying those conditions consists of wall, ceiling and slanted panels, and is capable of incorporating not only electrical equipment, medical gas system and lighting gears but all the necessary functions and equipment at need.Modular theater has a high availability of extension providing for the introduction of new facility in the future, establishing as well an operating environment with high work ability and enough function."}
+]
