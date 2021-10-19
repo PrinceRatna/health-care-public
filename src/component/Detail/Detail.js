@@ -8,6 +8,7 @@ const Detail = () => {
 
   useEffect(()=>{
     fetch(`http://localhost:3000/serviceId/${detailId}.json`)
+    // fetch(`https://healthcare-6f719/serviceId/${detailId}`)
         .then(res=>res.json())
     .then(data=>setService(data));
 

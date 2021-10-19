@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 // import useFirebase from '../../hooks/useFirebase';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
+
 const auth = getAuth();
 
 const Register = () => {
