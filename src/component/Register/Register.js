@@ -3,20 +3,17 @@ import { NavLink } from 'react-router-dom';
 // import useAuth from '../../hooks/useAuth';
 // import useFirebase from '../../hooks/useFirebase';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import SignIn from '../SignIn/SignIn';
 
 const auth = getAuth();
 
 const Register = () => {
   // const {user,signInWithGoogle,logOut}=useAuth();
-
   const [firstName,setFirstName]=useState('');
   const [lastName,setlastName]=useState('');
   const [email,setEmail]=useState('');
   const [password,setPassword]=useState('');
   const [error,setError]=useState('');
-
-
-
   const handleRegistration=(e)=>{
     e.preventDefault();
 
@@ -32,7 +29,10 @@ const Register = () => {
     console.log(user)
     setError('');
   })
-console.log(firstName,lastName,email,password);
+  .catch(error=>{
+    setError(error.message);
+  })
+// console.log(firstName,lastName,email,password);
 
   }
 
@@ -81,19 +81,6 @@ console.log(firstName,lastName,email,password);
   <p>Already Sign Up ?
     <NavLink className=" inline-block bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 w-16 h-6 text-white font-medium text-base rounded" to="/sign">Log In </NavLink>
       </p>
-
-
-
-
-
-  {/* {
-    user.email?
-<button className="bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50  h-8 pl-2 pr-2 text-white font-medium text-base rounded" onClick={logOut}>Log Out</button> :
-    <div> */}
-    
-      {/* </div>
-  }
-   */}
    
         </div>
     );
