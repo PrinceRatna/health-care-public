@@ -6,7 +6,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 const auth = getAuth();
 
 
-const SignIn = (props) => {
+const SignIn = () => {
   const {signInWithGoogle}=useAuth();
   const[error,setError]=useState('');
   const[email,setEmail]=useState('');
@@ -37,8 +37,6 @@ const handlePassword=(e)=>{
 
 }
 
-
-
   const location=useLocation();
   const history=useHistory()
   const redirect_uri=location.state?.from || '/home';
@@ -51,8 +49,6 @@ const handlePassword=(e)=>{
   }
     return (
         <div className="text-center my-60 mx-auto ">
-           <h2>{props.firstName}</h2>
-           <h2>{props.lastName}</h2>
             <form onSubmit={processLogin}>
             <input onBlur={handleEmail} type="text" name="email" required className="border-2 rounded px-4 w-11/12 md:w-96 h-12 border-green-500  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Enter E-mail"/><br/> <br/>
 

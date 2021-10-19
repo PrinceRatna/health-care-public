@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 // import useAuth from '../../hooks/useAuth';
 // import useFirebase from '../../hooks/useFirebase';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import SignIn from '../SignIn/SignIn';
 
 const auth = getAuth();
 
@@ -40,10 +39,11 @@ const Register = () => {
 
   const handleFirstName=(e)=>{
     setFirstName(e.target.value);
-
+  console.log(firstName);
   }
   const handleSecondName=(e)=>{
     setlastName(e.target.value);
+    console.log(lastName);
 
   }
   const handleEmail=(e)=>{
