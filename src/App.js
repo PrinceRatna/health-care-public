@@ -9,11 +9,14 @@ import SignIn from './component/SignIn/SignIn';
 import Footer from './component/Footer/Footer';
 import NotFound from './component/NotFound/NotFound';
 import Detail from './component/Detail/Detail';
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './component/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <div>
-          <BrowserRouter>
+        <AuthProvider>
+        <BrowserRouter>
           <Header></Header>
           <Switch>
             <Route path="/home">
@@ -35,15 +38,16 @@ function App() {
             <Route path="/sign">
               <SignIn></SignIn>
             </Route>
-            <Route path="/detail/:detailId">
+            <PrivateRoute path="/detail/:detailId">
               <Detail></Detail>
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
           </Switch>
           <Footer></Footer>
           </BrowserRouter>
+        </AuthProvider>
     </div>
   );
 }

@@ -14,9 +14,8 @@ const Detail = () => {
   },[detailId])
   
     return (
-        <div>
+        <div className="mt-10 mb-20 text-center mx-10">
         
-            {/* <p>{detailId}</p> */}
             <p>{service[0]?.detail}</p>
         </div>
     );
