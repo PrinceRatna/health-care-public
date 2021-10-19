@@ -13,17 +13,26 @@ const Register = () => {
   const [lastName,setlastName]=useState('');
   const [email,setEmail]=useState('');
   const [password,setPassword]=useState('');
+  const [error,setError]=useState('');
 
 
 
   const handleRegistration=(e)=>{
+    e.preventDefault();
+
+    if(password.length<6){
+      setError('Password must be six character');
+      return;
+    }
+
     createUserWithEmailAndPassword(auth, email, password)
+    
   .then((userCredential) => {
     const user = userCredential.user;
     console.log(user)
+    setError('');
   })
 console.log(firstName,lastName,email,password);
-    e.preventDefault();
 
   }
 
@@ -59,6 +68,8 @@ console.log(firstName,lastName,email,password);
   <input type="text" onBlur={handleEmail} name="email" className="border-2 rounded px-4 w-11/12 md:w-96 h-12 border-green-500  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Enter E-mail" required/><br/> <br/>
 
   <input onBlur={handlePassword} type="password" name="password" className="border-2 px-5 rounded w-11/12 md:w-96 h-12 border-green-500  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"placeholder="Enter Password" required/><br/><br/>
+
+   <div className="text-red-500 mb-5">{error}</div>
 
   <input type="submit" value="Register" className="bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 w-52 h-10 text-white font-semibold text-xl rounded"/>
     
