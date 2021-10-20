@@ -12,6 +12,9 @@ const {user,logOut}=useAuth();
                 <NavLink activeStyle={{fontWeight:"bold",color:"black"}} className="text-white text-2xl block font-semibold p-4 " to="/services">Services</NavLink>
                 <NavLink activeStyle={{fontWeight:"bold",color:"black"}} className="text-white text-2xl block font-semibold p-4 " to="/register">Register</NavLink>
                 {
+                    user.displayName&&<div className="text-white text-2xl block font-semibold p-4">{user.displayName}</div>
+                }
+                {
                     user.email?
                     <button className="text-white text-2xl block font-semibold p-4 " onClick={logOut}>Log Out</button>:
                 <NavLink activeStyle={{fontWeight:"bold",color:"black"}} className="text-white text-2xl block font-semibold p-4 " to="/sign">Log In</NavLink>

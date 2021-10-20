@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { NavLink ,useLocation,useHistory} from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
+import useAuth from '../../hooks/useAuth';
 
 
 const auth = getAuth();
 
 const Register = () => {
+  const {user,logOut}=useAuth();
 
   const location=useLocation();
   const history=useHistory()
@@ -99,10 +101,10 @@ history.push(redirect_uri);
   
   </form>
 
-  <p>Already Sign Up ?
+   <p>Already Sign Up ?
     <NavLink className=" inline-block bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 w-16 h-6 text-white font-medium text-base rounded" to="/sign">Log In </NavLink>
       </p>
-   
+
         </div>
     );
 };
