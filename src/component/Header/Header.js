@@ -1,7 +1,6 @@
 import React from 'react';
 import {  NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import useFirebase from '../../hooks/useFirebase';
 
 const Header = () => {
 const {user,logOut}=useAuth();

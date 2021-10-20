@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-// import useAuth from '../../hooks/useAuth';
-// import useFirebase from '../../hooks/useFirebase';
+import { NavLink ,useLocation,useHistory} from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
 
 
 const auth = getAuth();
 
 const Register = () => {
+
+  const location=useLocation();
+  const history=useHistory()
+  const redirect_uri=location.state?.from || '/home';
+
+
+
   // const {user,signInWithGoogle,logOut}=useAuth();
   const [firstName,setFirstName]=useState('');
   const [lastName,setlastName]=useState('');
@@ -34,7 +39,11 @@ const Register = () => {
   .catch(error=>{
     setError(error.message);
   })
-// console.log(firstName,lastName,email,password);
+
+
+
+history.push(redirect_uri);
+
 
   }
 
@@ -53,11 +62,9 @@ const Register = () => {
 
   const handleFirstName=(e)=>{
     setFirstName(e.target.value);
-  // console.log(firstName);
   }
   const handleSecondName=(e)=>{
     setlastName(e.target.value);
-    // console.log(lastName);
 
   }
   const handleEmail=(e)=>{

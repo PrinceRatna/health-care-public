@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
 const Detail = () => {
-    // console.log(props.detail);
   let {detailId}=useParams();
   const [service,setService]=useState({});
 

@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 const Service = (props) => {
     const{title,url,detail,price,id}=props.detaill;
-// console.log(detail);
     return (
         <div className=" mx-auto rounded">
             <img className="w-96 h-72" src={url} alt=''/>

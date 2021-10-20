@@ -7,26 +7,38 @@ const auth = getAuth();
 
 
 const SignIn = () => {
+  const location=useLocation();
+  const history=useHistory()
+  const redirect_uri=location.state?.from || '/home';
+
+
   const {signInWithGoogle}=useAuth();
   const[error,setError]=useState('');
   const[email,setEmail]=useState('');
   const[password,setPassword]=useState('');
-  const[name,setName]=useState('');
-
-const processLogin=(e)=>{
+  
+  const processLogin=(e)=>{
   e.preventDefault();
 
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     const user = userCredential.user;
     console.log(user);
-    setName(user.displayName);
     setError('')
+
+
+    history.push(redirect_uri);
+
   })
   .catch((error) => {
     setError(error.message); 
   });
+
+
 }
+
+
+
 
 const handleEmail=(e)=>{
   setEmail(e.target.value);
@@ -39,19 +51,14 @@ const handlePassword=(e)=>{
 
 }
 
-  const location=useLocation();
-  const history=useHistory()
-  const redirect_uri=location.state?.from || '/home';
   const handleGoogleLogIn=()=>{
     signInWithGoogle()
     .then((result) => {
       history.push(redirect_uri);
-      // console.log(result.user);
     })
   }
     return (
         <div className="text-center my-60 mx-auto ">
-          <h1 className="text-lg font-medium mb-5">Hi, {name}. You are successfull logged in.</h1>
             <form onSubmit={processLogin}>
             <input onBlur={handleEmail} type="text" name="email" required className="border-2 rounded px-4 w-11/12 md:w-96 h-12 border-green-500  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Enter E-mail"/><br/> <br/>
 
@@ -64,16 +71,9 @@ const handlePassword=(e)=>{
   <br/>
   <br/>
 <p>Don't have sign up? Please sign up.. 
-    
-    { /* <button className="bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 w-20 h-8 text-white font-semibold text-base rounded">
-    Sign Up
-  </button> */}
-
    <NavLink className=" inline-block bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 w-16 h-6 text-white font-medium text-base rounded" to="/register">Sign Up</NavLink>
  </p>
   
-
-
   <div>-----------or-----------</div>
   <button className="bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50  h-8 pl-2 pr-2 text-white font-medium text-base rounded" onClick={handleGoogleLogIn}>Google Sign In</button>
 
