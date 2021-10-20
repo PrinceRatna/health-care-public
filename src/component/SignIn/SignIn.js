@@ -11,6 +11,7 @@ const SignIn = () => {
   const[error,setError]=useState('');
   const[email,setEmail]=useState('');
   const[password,setPassword]=useState('');
+  const[name,setName]=useState('');
 
 const processLogin=(e)=>{
   e.preventDefault();
@@ -19,6 +20,7 @@ const processLogin=(e)=>{
   .then((userCredential) => {
     const user = userCredential.user;
     console.log(user);
+    setName(user.displayName);
     setError('')
   })
   .catch((error) => {
@@ -49,6 +51,7 @@ const handlePassword=(e)=>{
   }
     return (
         <div className="text-center my-60 mx-auto ">
+          <h1 className="text-lg font-medium mb-5">Hi, {name}. You are successfull logged in.</h1>
             <form onSubmit={processLogin}>
             <input onBlur={handleEmail} type="text" name="email" required className="border-2 rounded px-4 w-11/12 md:w-96 h-12 border-green-500  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Enter E-mail"/><br/> <br/>
 

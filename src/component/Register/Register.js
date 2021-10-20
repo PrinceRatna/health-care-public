@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 // import useAuth from '../../hooks/useAuth';
 // import useFirebase from '../../hooks/useFirebase';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
 
 
 const auth = getAuth();
@@ -14,6 +14,7 @@ const Register = () => {
   const [email,setEmail]=useState('');
   const [password,setPassword]=useState('');
   const [error,setError]=useState('');
+
   const handleRegistration=(e)=>{
     e.preventDefault();
 
@@ -28,6 +29,7 @@ const Register = () => {
     const user = userCredential.user;
     console.log(user)
     setError('');
+    setUserName();
   })
   .catch(error=>{
     setError(error.message);
@@ -36,15 +38,26 @@ const Register = () => {
 
   }
 
+  const setUserName=()=>{
+
+    updateProfile(auth.currentUser, {
+      displayName: firstName , photoURL: "https://example.com/jane-q-user/profile.jpg"
+    }).then(() => {
+      
+    }).catch((error) => {
+    
+    });
+  }
+
 
 
   const handleFirstName=(e)=>{
     setFirstName(e.target.value);
-  console.log(firstName);
+  // console.log(firstName);
   }
   const handleSecondName=(e)=>{
     setlastName(e.target.value);
-    console.log(lastName);
+    // console.log(lastName);
 
   }
   const handleEmail=(e)=>{
